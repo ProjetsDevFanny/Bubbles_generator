@@ -11,7 +11,8 @@
   height: var(--size);
   width: var(--size);
   border-radius: 150px;
-  background-color: rgba(0, 136, 255, 0.833);
+  background-color: rgba(0, 136, 255, 0.317);
+  transition: filter 8s ease;
   filter: hue-rotate(780deg);
   animation: anim 8s forwards;
 }
@@ -22,3 +23,4 @@
     left: 100%;
   }
 }
+
