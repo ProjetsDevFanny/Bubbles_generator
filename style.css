@@ -1,0 +1,17 @@
+* {
+  background-color: rgba(0, 0, 255, 0.288);
+  overflow: hidden;
+  cursor: crosshair;
+  max-width: 100vh;
+}
+
+.bubble {
+  position: absolute;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 150px;
+  color: rgba(193, 156, 82, 0.39);
+  filter: hue-rotate(780deg);
+  
+  animation: anim 8s forwards;
+}
