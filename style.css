@@ -1,5 +1,4 @@
 * {
-  background-color: rgba(0, 0, 255, 0.288);
   overflow: hidden;
   cursor: crosshair;
   max-width: 100vh;
@@ -7,11 +6,19 @@
 
 .bubble {
   position: absolute;
+  top: -250px;
+  left: 100%;
   height: var(--size);
   width: var(--size);
   border-radius: 150px;
-  color: rgba(193, 156, 82, 0.39);
+  background-color: rgba(0, 136, 255, 0.833);
   filter: hue-rotate(780deg);
-  
   animation: anim 8s forwards;
+}
+
+@keyframes anim {
+  to {
+    top: -250px;
+    left: 100%;
+  }
 }
