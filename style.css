@@ -6,21 +6,38 @@
 
 .bubble {
   position: absolute;
-  top: -250px;
-  left: 100%;
-  height: var(--size);
+  bottom: -50%;
   width: var(--size);
-  border-radius: 150px;
+  height: var(--size);
+  border-radius: 50%;
   background-color: rgba(0, 136, 255, 0.317);
-  transition: filter 8s ease;
-  filter: hue-rotate(780deg);
-  animation: anim 8s forwards;
-}
+  filter: hue-rotate(0deg); /* Couleur initiale sans rotation */
+  animation: move-up 8s forwards, color-shift 3s infinite; /* Animations combinées *
 
 @keyframes anim {
   to {
     top: -250px;
     left: 100%;
+    opacity: 0;  /* Les rend transparentes */
+  }
+
+  /* Animation qui fait monter les bulles */
+  @keyframes move-up {
+      to {
+      top: -50%;
+    }
+     }
+
+
+/* Animation qui fait changer de couleur les bulles */
+@keyframes color-shift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg); /* Demi-tour du spectre des couleurs */
+  }
+  100% {
+    filter: hue-rotate(360deg); /* Retour à la couleur initiale */
   }
 }
-
