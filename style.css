@@ -15,21 +15,20 @@
   animation: move-up 12s ease, color-shift 3s infinite; /* Animations combinées */
 }
 
-
-  /* Animation qui fait monter les bulles, les fait bouger latéralement et les fait apparaître et disparaître */
-  @keyframes move-up {
-    0% {
-      transform: translateY(0) translateX(0); /* Départ immédiat */
-      opacity: 0; /* apparaît*/
-    }
-    50% {
-      opacity: 0.4;
-    }
-    100% {
-      transform: translateY(-150vh) translateX(calc(var(--direction) * 150vh)); /* Sortie par le haut, et déplacement en latéral */
-      opacity: 0.7; /* Disparaît progressivement */
-    }
+/* Animation qui fait monter les bulles, les fait bouger latéralement et les fait apparaître et disparaître */
+@keyframes move-up {
+  0% {
+    transform: translateY(0) translateX(0); /* Départ immédiat */
+    opacity: 0; /* apparaît*/
   }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-150vh) translateX(calc(var(--direction) * 150vh)); /* Sortie par le haut, et déplacement en latéral */
+    opacity: 0.7; /* Disparaît progressivement */
+  }
+}
 
 /* Animation qui fait changer de couleur les bulles */
 @keyframes color-shift {
@@ -44,11 +43,9 @@
   }
 }
 
-
 h3 {
   font-size: 10rem;
   color:rgba(33, 45, 56, 0.521);
   margin:auto;
   text-align: center;
-  
 }

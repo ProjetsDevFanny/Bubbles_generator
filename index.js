@@ -36,4 +36,4 @@ const bullesPop = () => {
 // Exemple : générer des bulles toutes les 100 ms
 let interval = setInterval(() => {
   bullesPop();
-}, 500);
+}, 100);
