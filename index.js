@@ -1,3 +1,4 @@
+// Affichage du compteur sur l'écran
 const countDisplay = document.querySelector(".counter");
 let count = 0;
 
@@ -24,7 +25,7 @@ const bullesPop = () => {
     bubble.remove();
   });
 
-  // Au click de la souris, la bulle disparaît :
+  // Au click de la souris, la bulle disparaît, et le compteur augmente de 1:
   bubble.addEventListener("click", () => {
     bubble.remove();
     count++;
