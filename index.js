@@ -6,7 +6,7 @@ const bullesPop = () => {
   bubble.classList.add("bubble"); //Ajout de la bulle au DOM
 
   // Taille aléatoire de la bulle:
-  const size = Math.floor(Math.random() * 300) + 100; // Taille entre 10px et 300px
+  const size = Math.floor(Math.random() * 200) + 50; // Taille entre 10px et 300px
   bubble.style.setProperty("--size", `${size}px`);
 
   // Position horizontale aléatoire
@@ -30,6 +30,6 @@ const bullesPop = () => {
 
 // Exemple : générer des bulles toutes les 500 ms
 
-// let interval = setInterval(() => {
-//   bullesPop();
-// }, 300);
+let interval = setInterval(() => {
+  bullesPop();
+}, 100);

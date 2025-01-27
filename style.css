@@ -12,22 +12,17 @@
   border-radius: 50%;
   background-color: rgba(0, 136, 255);
   filter: hue-rotate(0deg); /* Couleur initiale sans rotation */
-  animation: move-up 8s ease, color-shift 3s infinite; /* Animations combinées *
+  animation: move-up 15s ease, color-shift 3s infinite; /* Animations combinées */
+}
 
-@keyframes anim {
-  to {
-    top: -250px;
-    left: 100%;
-    opacity: 0;  /* Les rend transparentes */
-  }
 
-  /* Animation qui fait monter les bulles */
+  /* Animation qui fait monter les bulles, les fait bouger latéralement et les fait apparaître et disparaître */
   @keyframes move-up {
     0% {
       transform: translateY(0) translateX(0); /* Départ immédiat */
-      opacity: 0;
+      opacity: 0; /* apparaît*/
     }
-    50%{
+    50% {
       opacity: 0.4;
     }
     100% {
@@ -36,14 +31,12 @@
     }
   }
 
-
-
 /* Animation qui fait changer de couleur les bulles */
 @keyframes color-shift {
   0% {
     filter: hue-rotate(0deg);
   }
-   100% {
+  100% {
     filter: hue-rotate(360deg); /* Retour à la couleur initiale */
   }
 }
