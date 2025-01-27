@@ -6,13 +6,13 @@
 
 .bubble {
   position: absolute;
-  bottom: -50%;
+  bottom: -20%;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background-color: rgba(0, 136, 255, 0.317);
+  background-color: rgba(0, 136, 255);
   filter: hue-rotate(0deg); /* Couleur initiale sans rotation */
-  animation: move-up 8s forwards, color-shift 3s infinite; /* Animations combinées *
+  animation: move-up 8s ease, color-shift 3s infinite; /* Animations combinées *
 
 @keyframes anim {
   to {
@@ -23,10 +23,19 @@
 
   /* Animation qui fait monter les bulles */
   @keyframes move-up {
-      to {
-      top: -50%;
+    0% {
+      transform: translateY(0) translateX(0); /* Départ immédiat */
+      opacity: 0;
     }
-     }
+    50%{
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-150vh) translateX(calc(var(--direction) * 150vh)); /* Sortie par le haut, et déplacement en latéral */
+      opacity: 0.7; /* Disparaît progressivement */
+    }
+  }
+
 
 
 /* Animation qui fait changer de couleur les bulles */
@@ -34,10 +43,7 @@
   0% {
     filter: hue-rotate(0deg);
   }
-  50% {
-    filter: hue-rotate(180deg); /* Demi-tour du spectre des couleurs */
-  }
-  100% {
+   100% {
     filter: hue-rotate(360deg); /* Retour à la couleur initiale */
   }
 }
