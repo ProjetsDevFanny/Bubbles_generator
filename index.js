@@ -1,3 +1,6 @@
+const countDisplay = document.querySelector(".counter");
+let count = 0;
+
 // Fonction qui génère des bulles:
 const bullesPop = () => {
   // Création d'un nouvelle bulle
@@ -6,7 +9,7 @@ const bullesPop = () => {
   bubble.classList.add("bubble"); //Ajout de la bulle au DOM
 
   // Taille aléatoire de la bulle:
-  const size = Math.floor(Math.random() * 200) + 50; // Taille entre 10px et 300px
+  const size = Math.floor(Math.random() * 400) + 50; // Taille entre 50px et 400px
   bubble.style.setProperty("--size", `${size}px`);
 
   // Position horizontale aléatoire
@@ -20,16 +23,17 @@ const bullesPop = () => {
   bubble.addEventListener("animationend", () => {
     bubble.remove();
   });
+
+  // Au click de la souris, la bulle disparaît :
+  bubble.addEventListener("click", () => {
+    bubble.remove();
+    count++;
+    // console.log(count);
+    countDisplay.textContent = count;
+  });
 };
 
-// Suppression automatique après un délai
-//   setTimeout(() => {
-//     bubble.remove(); // Supprime la bulle du DOM après 7secs
-//   }, 9000);
-// };
-
-// Exemple : générer des bulles toutes les 500 ms
-
+// Exemple : générer des bulles toutes les 100 ms
 let interval = setInterval(() => {
   bullesPop();
-}, 100);
+}, 500);

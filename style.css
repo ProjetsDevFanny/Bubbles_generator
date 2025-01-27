@@ -1,7 +1,7 @@
 * {
   overflow: hidden;
   cursor: crosshair;
-  max-width: 100vh;
+  max-width: 200vh; /* Pour enlever le curseur à droite */
 }
 
 .bubble {
@@ -12,7 +12,7 @@
   border-radius: 50%;
   background-color: rgba(0, 136, 255);
   filter: hue-rotate(0deg); /* Couleur initiale sans rotation */
-  animation: move-up 15s ease, color-shift 3s infinite; /* Animations combinées */
+  animation: move-up 12s ease, color-shift 3s infinite; /* Animations combinées */
 }
 
 
@@ -36,7 +36,19 @@
   0% {
     filter: hue-rotate(0deg);
   }
-  100% {
-    filter: hue-rotate(360deg); /* Retour à la couleur initiale */
+  50% {
+    filter: hue-rotate(380deg);
   }
+  100% {
+    filter: hue-rotate(760deg); /* Retour à la couleur initiale */
+  }
+}
+
+
+h3 {
+  font-size: 10rem;
+  color:rgba(33, 45, 56, 0.521);
+  margin:auto;
+  text-align: center;
+  
 }
