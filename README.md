@@ -1,4 +1,4 @@
-# Bubbles_generetor
+# Bubbles_generator
 Générateur de bulles: 
 Des bulles sont générées et vont dans des directions aléatoires différentes, de bas en haut.
 Elles changent de couleur. 
