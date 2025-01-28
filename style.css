@@ -1,45 +1,31 @@
-* {
+body {
+  /* Tout ce qui dépasse du body, je ne veux pas le voir, pour ne pas que les bulles casse la page = il n'y a pas de curseur. */
   overflow: hidden;
   cursor: crosshair;
-  max-width: 200vh; /* Pour enlever le curseur à droite */
-}
+   /* 100vh = taille écran utilisateur: */
+  min-height: 100vh;
+ }
 
 .bubble {
   position: absolute;
   bottom: -20%;
   width: var(--size);
   height: var(--size);
+  opacity: 0;
   border-radius: 50%;
   background-color: rgba(0, 136, 255);
+  animation: anim 8s forwards; 
   filter: hue-rotate(0deg); /* Couleur initiale sans rotation */
-  animation: move-up 12s ease, color-shift 3s infinite; /* Animations combinées */
 }
 
 /* Animation qui fait monter les bulles, les fait bouger latéralement et les fait apparaître et disparaître */
-@keyframes move-up {
-  0% {
-    transform: translateY(0) translateX(0); /* Départ immédiat */
-    opacity: 0; /* apparaît*/
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-150vh) translateX(calc(var(--direction) * 150vh)); /* Sortie par le haut, et déplacement en latéral */
-    opacity: 0.7; /* Disparaît progressivement */
-  }
-}
-
-/* Animation qui fait changer de couleur les bulles */
-@keyframes color-shift {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(380deg);
-  }
-  100% {
-    filter: hue-rotate(760deg); /* Retour à la couleur initiale */
+@keyframes anim {
+  to {
+    top: -350px;
+    /* Pour faire sortir les bulles de l'écran en haut */
+    opacity: 0.8; /* Apparaît progressivement */
+    left: var(--directionLaterale);
+    filter: hue-rotate(720deg); 
   }
 }
 

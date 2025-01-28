@@ -6,19 +6,25 @@ let count = 0;
 const bullesPop = () => {
   // Création d'un nouvelle bulle
   const bubble = document.createElement("span");
-  document.body.appendChild(bubble); //Ajout d'un class CSS
   bubble.classList.add("bubble"); //Ajout de la bulle au DOM
+  document.body.appendChild(bubble); //Ajout d'un class CSS
 
   // Taille aléatoire de la bulle:
-  const size = Math.floor(Math.random() * 400) + 50; // Taille entre 50px et 400px
+  const size = Math.floor(Math.random() * 300) + 50; // Taille entre 50px et 400px
   bubble.style.setProperty("--size", `${size}px`);
 
-  // Position horizontale aléatoire
+  // Position de départ horizontale aléatoire
   bubble.style.left = Math.random() * 100 + "%";
 
-  // Direction aléatoire pour le mouvement horizontal
-  const direction = Math.random() > 0.5 ? 1 : -1;
-  bubble.style.setProperty("--direction", direction);
+  // Position de départ verticale aléatoire
+  bubble.style.top = Math.random() * 100 + 50 + "%";
+
+  // Direction doite ou gauche aléatoire pour le mouvement horizontal
+  const plusMinus = Math.random() > 0.5 ? 1 : -1;
+  bubble.style.setProperty(
+    "--directionLaterale",
+    Math.random() * 100 * plusMinus + "%"
+  );
 
   // Suppression de la bulle après la fin de l'animation
   bubble.addEventListener("animationend", () => {
@@ -35,6 +41,4 @@ const bullesPop = () => {
 };
 
 // Exemple : générer des bulles toutes les 100 ms
-let interval = setInterval(() => {
-  bullesPop();
-}, 100);
+setInterval(bullesPop, 300);
